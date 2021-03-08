@@ -10,7 +10,8 @@ const NewsDetails = () => {
         .then(res => res.json())
         .then(data => setNews(data.articles))
     },[]);
-    
+    const selectedNews = news.find(ns => ns.author === author);
+    console.log(selectedNews);
     const {title, urlToImage, publishedAt, content} = selectedNews;
     return (
         <div className='container'>
